@@ -1,0 +1,70 @@
+{
+  "name": "daedalus-robot-lab",
+  "version": "2.0.0",
+  "description": "Daedalus \u2014 a computer-vision robot lab: face & hand-gesture robot, path-planning robot and maze robot.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "keywords": [],
+  "author": "Daedalus Lab",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "pe-library": "^1.0.1",
+    "resedit": "^2.0.3",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@mediapipe/tasks-vision": "^0.10.21"
+  },
+  "productName": "Daedalus Robot Vision Lab",
+  "build": {
+    "appId": "lab.daedalus.robotvision",
+    "productName": "Daedalus Robot Vision Lab",
+    "copyright": "\u00a9 2026 Daedalus Lab",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "afterPack": "build/afterPack.js",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "executableName": "Daedalus"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Daedalus Robot Vision Lab",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "runAfterFinish": true,
+      "artifactName": "Daedalus-Setup-${version}.exe",
+      "license": "build/license.txt",
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": null
+  }
+}

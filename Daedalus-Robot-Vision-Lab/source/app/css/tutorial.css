@@ -1,0 +1,65 @@
+/* ---------- Boot Camp (mandatory tutorial) ---------- */
+.tut-wrap { position: fixed; inset: 0; z-index: 150; display: grid; place-items: center; padding: 24px;
+  background: radial-gradient(900px 500px at 20% 10%, rgba(34,211,238,.18), transparent), radial-gradient(800px 500px at 90% 90%, rgba(167,139,250,.18), transparent), rgba(3,7,14,.82);
+  backdrop-filter: blur(8px); animation: fadeIn .3s; }
+.tut-box { width: min(1080px, 96vw); max-height: 94vh; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; animation: popIn .35s cubic-bezier(.3,1.3,.5,1); }
+.tut-head { display: flex; align-items: center; gap: 16px; padding: 18px 24px 14px; }
+.tut-brand { flex: 1; }
+.tut-brand h2 { font-size: 24px; margin-top: 2px; }
+.tut-dots { display: flex; gap: 6px; }
+.tut-dots i { width: 28px; height: 6px; border-radius: 6px; background: var(--surface-3); transition: .3s; }
+.tut-dots i.done { background: var(--green); }
+.tut-dots i.on { background: var(--accent); width: 40px; }
+.tut-progress { height: 3px; background: var(--surface-2); }
+.tut-progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--violet)); transition: width .4s; }
+.tut-body { flex: 1; overflow: auto; padding: 22px 24px; min-height: 420px; }
+.tut-foot { display: flex; align-items: center; gap: 12px; padding: 14px 24px; border-top: 1px solid var(--line); background: var(--surface-2); }
+.tut-taskstate { flex: 1; text-align: center; font-size: 13px; color: var(--text-3); display: flex; align-items: center; justify-content: center; gap: 7px; }
+.tut-taskstate svg { width: 16px; height: 16px; }
+.tut-taskstate.ok { color: var(--green); font-weight: 600; }
+.tut-next.pulse { animation: nextPulse 1.4s infinite; }
+@keyframes nextPulse { 50% { box-shadow: 0 0 0 6px var(--accent-soft), var(--glow); } }
+.tut-lead { font-size: 16px; color: var(--text-2); max-width: 780px; }
+.tut-robots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.tut-robot { border: 1px solid var(--line-2); background: var(--surface-2); border-radius: 18px; padding: 20px 16px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; transition: .25s; }
+.tut-robot .av { width: 96px; height: 96px; filter: grayscale(1) brightness(.7); transition: .4s; }
+.tut-robot b { font-family: 'Space Grotesk'; font-size: 20px; }
+.tut-robot .zz { color: var(--text-3); font-size: 13px; margin: 0; min-height: 40px; }
+.tut-robot:hover { border-color: var(--rc); transform: translateY(-3px); }
+.tut-robot.awake { border-color: var(--rc); box-shadow: 0 0 0 1px var(--rc), 0 10px 30px color-mix(in srgb, var(--rc) 22%, transparent); cursor: default; }
+.tut-robot.awake .av { filter: none; animation: wake .6s cubic-bezier(.3,1.6,.5,1); }
+.tut-robot.awake .zz { color: var(--text); }
+@keyframes wake { 0% { transform: scale(.7) rotate(-8deg); } }
+.tut-note { display: flex; gap: 9px; align-items: center; font-size: 13px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; margin-top: 12px; }
+.tut-note svg { width: 17px; height: 17px; color: var(--accent); flex: none; }
+.tut-split { display: grid; grid-template-columns: 340px 1fr; gap: 24px; align-items: start; }
+.tut-explain p { color: var(--text-2); font-size: 14px; }
+.tut-list { padding-left: 18px; margin: 0 0 12px; color: var(--text-2); font-size: 13.5px; display: flex; flex-direction: column; gap: 6px; }
+.tut-task { display: flex; gap: 10px; margin-top: 14px; padding: 13px 14px; border-radius: 14px; background: var(--accent-soft); border: 1px solid var(--accent); font-size: 13.5px; }
+.tut-task svg { width: 20px; height: 20px; color: var(--accent); flex: none; margin-top: 1px; }
+.tut-play { min-width: 0; }
+.tut-argus { display: grid; grid-template-columns: 250px 1fr; gap: 14px; }
+.tut-aleft { display: flex; flex-direction: column; gap: 6px; }
+.tut-pal { display: flex; flex-direction: column; gap: 6px; }
+.tut-track { min-height: 120px; border: 2px dashed var(--line-2); border-radius: 12px; padding: 6px; display: flex; flex-direction: column; gap: 6px; transition: .15s; }
+.tut-track.over { border-color: var(--accent); background: var(--accent-soft); }
+.tut-drop { color: var(--text-3); font-size: 12.5px; text-align: center; padding: 34px 0; }
+.tut-astage { height: 250px; }
+.tut-mstage { height: 300px; }
+.tut-compare { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.tut-compare div { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--text-2); }
+.tut-compare b { display: flex; align-items: center; gap: 6px; color: var(--text); font-family: 'Space Grotesk'; letter-spacing: .06em; }
+.tut-compare svg { width: 16px; height: 16px; }
+.tut-scan { margin-top: 14px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.tut-scan svg { display: block; width: 100%; }
+.tut-gest { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center; }
+.tut-face { height: 300px; }
+.tut-chart { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tut-gbtn { border: 1px solid var(--line-2); background: var(--surface-2); border-radius: 12px; padding: 9px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 1px; text-align: left; transition: .15s; }
+.tut-gbtn .em { font-size: 24px; }
+.tut-gbtn small { color: var(--text-3); }
+.tut-gbtn:hover { border-color: var(--accent); }
+.tut-gbtn.on { border-color: var(--green); background: rgba(52,211,153,.1); }
+.tut-cert { text-align: center; }
+.tut-cert-face { height: 180px; margin-bottom: 8px; }
+.tut-cert h2 { font-size: 24px; margin: 6px 0 8px; }

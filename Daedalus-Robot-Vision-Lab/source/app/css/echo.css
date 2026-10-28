@@ -1,0 +1,66 @@
+/* ---------- ECHO · Vision robot ---------- */
+.ec-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 330px 1fr 330px; gap: 14px; }
+.ec-col { display: flex; flex-direction: column; gap: 14px; min-height: 0; overflow: auto; }
+.ec-slider-card { padding: 12px; }
+.ec-cam-card { display: flex; flex-direction: column; overflow: hidden; }
+.ec-cam { position: relative; aspect-ratio: 4/3; background: #02050a; border-bottom: 1px solid var(--line); overflow: hidden; }
+.ec-cam video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); display: block; }
+.ec-ov { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.ec-camoff { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 20px; color: #9fb0c8; background: radial-gradient(circle at 50% 40%, #0d1a2a, #02050a); font-size: 12.5px; }
+.ec-camoff svg { width: 40px; height: 40px; opacity: .7; }
+.ec-camoff b { color: #e8eef8; font-size: 14px; }
+.ec-hud { position: absolute; left: 10px; top: 10px; display: flex; gap: 6px; }
+.ec-hud .chip { background: rgba(5,10,18,.75); border-color: transparent; }
+.ec-hud .chip svg { width: 14px; height: 14px; }
+.ec-cam-bar { display: flex; gap: 8px; padding: 10px 12px; }
+.ec-cam-bar .btn.primary { flex: 1; }
+.ec-opts { display: flex; flex-direction: column; gap: 8px; padding: 0 12px 12px; }
+
+.ec-robot { display: flex; flex-direction: column; min-height: 0; overflow: hidden; background: radial-gradient(600px 300px at 50% 0%, var(--accent-soft), transparent), var(--surface); }
+.ec-robot-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px 0; }
+.ec-expr { display: flex; align-items: center; gap: 10px; }
+.ec-expr .em { font-size: 34px; line-height: 1; }
+.ec-expr b { font-family: 'Space Grotesk'; font-size: 22px; }
+.ec-face { flex: 1; min-height: 0; padding: 4px 30px; display: grid; place-items: center; }
+.ec-face .face-host { max-width: 470px; }
+.ec-line { text-align: center; font-family: 'Space Grotesk'; font-size: 16px; color: var(--text-2); padding: 0 16px 8px; min-height: 30px; }
+.ec-timeline { position: relative; height: 14px; margin: 4px 16px 6px; background: var(--surface-3); border-radius: 8px; overflow: hidden; }
+.ec-timeline i { position: absolute; top: 0; bottom: 0; }
+.ec-timeline span { position: absolute; top: 15px; font-size: 10px; color: var(--text-3); }
+.ec-timeline .l { left: 0; } .ec-timeline .r { right: 0; }
+.ec-lib { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 14px; justify-content: center; border-top: 1px solid var(--line); margin-top: 10px; }
+.ec-libbtn { border: 1px solid var(--line-2); background: var(--surface-2); border-radius: 999px; height: 30px; padding: 0 11px 0 6px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: .12s; }
+.ec-libbtn span { font-size: 16px; }
+.ec-libbtn:hover { border-color: var(--ec); box-shadow: 0 0 0 1px var(--ec); transform: translateY(-1px); }
+
+.ec-analysis { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.ec-ana-body { flex: 1; overflow: auto; padding: 14px 16px; }
+.ec-sub { font-size: 11.5px; color: var(--text-3); margin-bottom: 9px; font-weight: 500; }
+.ec-signals { display: flex; flex-direction: column; gap: 6px; }
+.ec-sig { display: grid; grid-template-columns: 82px 1fr 28px; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.ec-sig-bar { height: 6px; background: var(--surface-3); border-radius: 6px; overflow: hidden; }
+.ec-sig-bar i { display: block; height: 100%; background: var(--violet); border-radius: 6px; width: 0; transition: width .1s; }
+.ec-sig b { font-family: 'JetBrains Mono'; font-size: 11px; text-align: right; }
+.ec-gbig { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); }
+.ec-gbig .em { font-size: 40px; line-height: 1; }
+.ec-gbig b { font-family: 'Space Grotesk'; font-size: 16px; }
+.ec-fingers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
+.ec-finger { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10.5px; color: var(--text-3); }
+.ec-finger i { width: 14px; height: 34px; border-radius: 8px; background: var(--surface-3); border: 1px solid var(--line-2); transition: .15s; }
+.ec-finger.on i { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px var(--accent); height: 40px; }
+.ec-finger.on { color: var(--accent); }
+.ec-chart { display: flex; flex-direction: column; gap: 6px; }
+.ec-gcard { display: grid; grid-template-columns: 34px 1fr 118px; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 11px; border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; transition: .12s; }
+.ec-gcard:hover { border-color: var(--accent); }
+.ec-gcard.live { border-color: var(--accent); background: var(--accent-soft); box-shadow: var(--glow); }
+.ec-gcard .em { font-size: 24px; text-align: center; }
+.ec-gcard .gl { min-width: 0; }
+.ec-gcard b { font-size: 12.5px; display: block; }
+.ec-gcard small { font-size: 10.5px; color: var(--text-3); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ec-map { height: 28px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); font-size: 11.5px; width: 100%; }
+
+/* robot speech bubble (shared by every RobotFace) */
+.rf-bubble { position: absolute; left: 50%; top: 2%; transform: translate(-50%, -10px) scale(.9); opacity: 0; pointer-events: none; background: var(--surface); color: var(--text); border: 1px solid var(--line-2); border-radius: 14px; padding: 7px 13px; font-weight: 600; font-size: 13px; box-shadow: var(--shadow-sm); transition: .25s; white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis; z-index: 2; }
+.rf-bubble.show { opacity: 1; transform: translate(-50%, 0) scale(1); }
+
+@media (max-width: 1320px) { .ec-grid { grid-template-columns: 290px 1fr 300px; } }

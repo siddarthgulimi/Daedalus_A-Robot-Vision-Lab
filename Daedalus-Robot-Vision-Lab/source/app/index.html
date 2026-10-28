@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' daedalus: blob: data:; script-src 'self' daedalus: 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' daedalus: 'unsafe-inline'; img-src 'self' daedalus: data: blob:; media-src 'self' daedalus: blob: mediastream:; connect-src 'self' daedalus: data: blob:; worker-src 'self' daedalus: blob:; font-src 'self' daedalus: data:">
+<title>Daedalus — Robot Vision Lab</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/argus.css">
+<link rel="stylesheet" href="css/echo.css">
+<link rel="stylesheet" href="css/theseus.css">
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/tutorial.css">
+<script>
+  /* apply theme before first paint to avoid a flash */
+  (function () { try { var s = JSON.parse(localStorage.getItem('daedalus.settings') || '{}'); var t = s.theme || 'system';
+    if (t === 'system') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="brand-logo" viewBox="0 0 40 40">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+        <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="url(#lg)"/>
+        <path d="M20 9v4" stroke="#fff" stroke-width="1.8"/><circle cx="20" cy="8" r="2.2" fill="#fff"/>
+        <rect x="8.5" y="13" width="23" height="18.5" rx="6" fill="#081220" stroke="#fff" stroke-width="1.8"/>
+        <rect x="13" y="18" width="4.4" height="5" rx="1.6" fill="#22d3ee"/><rect x="22.6" y="18" width="4.4" height="5" rx="1.6" fill="#22d3ee"/>
+        <path d="M16 25.5q4 3 8 0" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div><div class="brand-name">DAEDALUS</div><div class="brand-sub">Robot Vision Lab</div></div>
+    </div>
+    <button class="nav-item" data-page="home"></button>
+    <div class="nav-label">Robots</div>
+    <button class="nav-item" data-page="argus"></button>
+    <button class="nav-item" data-page="echo"></button>
+    <button class="nav-item" data-page="theseus"></button>
+    <div class="nav-label">Play &amp; review</div>
+    <button class="nav-item" data-page="arcade"></button>
+    <button class="nav-item" data-page="audit"></button>
+    <div class="nav-label">Support</div>
+    <button class="nav-item" data-page="help"></button>
+    <button class="nav-item" data-page="settings"></button>
+    <div class="sidebar-foot">
+      <div id="themeQuick"></div>
+      <div class="row small faint" id="camStatus"><span class="chip"><span class="dot"></span>Camera off</span></div>
+    </div>
+  </aside>
+  <main class="main"></main>
+</div>
+
+<div class="scrim" id="guideScrim" onclick="D.guide.close()"></div>
+<aside class="drawer" id="guideDrawer"><div class="drawer-head"></div><div class="drawer-body"></div></aside>
+<div class="toasts"></div>
+
+<script src="js/core.js"></script>
+<script src="js/robotface.js"></script>
+<script src="js/vision.js"></script>
+<script src="js/guides.js"></script>
+<script src="js/argus.js"></script>
+<script src="js/echo.js"></script>
+<script src="js/maze.js"></script>
+<script src="js/theseus.js"></script>
+<script src="js/arcade.js"></script>
+<script src="js/games/minesweeper.js"></script>
+<script src="js/games/snake.js"></script>
+<script src="js/games/mirror.js"></script>
+<script src="js/games/simon.js"></script>
+<script src="js/games/pilot.js"></script>
+<script src="js/games/race.js"></script>
+<script src="js/games/gemrush.js"></script>
+<script src="js/audit.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
